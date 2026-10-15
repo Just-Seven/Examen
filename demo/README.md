@@ -17,6 +17,8 @@ docker compose up --build
 
 La primera ejecución puede tardar mientras Docker descarga las imágenes y construye la API. Espera a que el servicio `app` termine de iniciar. La API queda disponible en `http://localhost:8080` y PostgreSQL en el puerto `5432`.
 
+Compose crea la base `huertos` al iniciar PostgreSQL por primera vez y ejecuta `src/main/resources/db/init/01-schema.sql` para crear la tabla `parcels`. También puedes crear la base y la tabla en una instalación local de PostgreSQL con `psql -U postgres -f database.sql` desde esta carpeta. Ese comando requiere permisos para crear bases de datos.
+
 Para detener los contenedores, presiona `Ctrl+C` y ejecuta:
 
 ```powershell
